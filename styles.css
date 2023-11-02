@@ -1,1 +1,29 @@
+html {
+    height: 100%;
+    width: 100%;
+}
 
+body {
+    margin: 0;
+    display: grid;
+    grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto;
+    gap: 8px;
+}
+
+.nosik-header {
+    grid-area: header;
+    background: #0d415d;
+}
+
+.nosik-main {
+    grid-area: main;
+    background: #30a9ed;
+}
+
+.nosik-footer {
+    grid-area: footer;
+    background: #0d415d;
+}
