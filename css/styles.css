@@ -17,41 +17,66 @@ body {
 /* HEADER DE LA WEB */
 
 .nosik-header {
-    padding: 10px 20px;
+    padding: 7px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0d415d;
+    background: #909090;
+}
+
+.nosik-header-logo img {
+
 }
 
 .nosik-header-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 .nosik-header-list li {
-    margin-right: 20px; /* Espacio entre elementos del menú */
+    margin-right: 20px;
+    display: inline-block;
+    text-align: center;
 }
 
 .nosik-header-list a {
     text-decoration: none;
-    color: white; /* Color del texto del menú */
+    color: white;
 }
 
 .nosik-header-shopping-cart {
-    color: white; /* Color del icono del carrito de compra */
+    color: white;
 }
 
 .nosik-main {
     grid-area: main;
-    background: #30a9ed;
+}
+
+/* PÁGINA DE LA GALERÍA */
+
+.nosik-main-container {
+    margin: 40px;
+}
+
+.nosik-gallery-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nosik-main-galery-artwork {
+    width: 200px;
+    padding: 11px;
+    border: 1px solid red;
 }
 
 /* FOOTER DE LA WEB */
 
 .nosik-footer {
     grid-area: footer;
-    background: #0d415d;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: #484848;
 }
