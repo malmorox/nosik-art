@@ -45,19 +45,16 @@ body {
     color: white;
 }
 
-.nosik-header-shopping-cart {
-    color: white;
-}
+/* CARRITO DE COMPRA */
 
-.container-icon{
+.nosik-header-shopping-cart {
     position: relative;
 }
 
-.count-products{
+.nosik-cart-counter {
     position: absolute;
     top: 55%;
     right: 0;
-
     background-color: #000;
     color: #fff;
     width: 25px;
@@ -69,15 +66,14 @@ body {
     border-radius: 50%;
 }
 
-#contador-productos{
+#cart-count {
     font-size: 12px;
 }
 
-.container-cart-products{
+.nosik-cart-products {
     position: absolute;
     top: 50px;
     right: 0;
-
     background-color: #fff;
     width: 400px;
     z-index: 1;
