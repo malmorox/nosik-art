@@ -70,7 +70,7 @@ rowProduct.addEventListener('click', e => {
     }
 });
 
-// Funcion para mostrar  HTML
+// funcion para mostrar  HTML
 const showHTML = () => {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
