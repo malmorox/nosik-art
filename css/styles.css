@@ -83,6 +83,34 @@ body {
     border: 1px solid red;
 }
 
+/* PÁGINA DE LA DETALLES */
+
+.sobre-mi {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nosik-art-piece .image img {
+    width: 200px; /* Ajusta el tamaño de la foto de perfil según tus preferencias */
+    height: 200px; /* Ajusta el tamaño de la foto de perfil según tus preferencias */
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.art-piece-info .name {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.art-piece-info .description {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
 /* FOOTER DE LA WEB */
 
 .nosik-footer {
