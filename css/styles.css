@@ -51,13 +51,16 @@ body {
 
 .nosik-main {
     grid-area: main;
+    margin: 0;
 }
 
-/* PÁGINA DE LA GALERÍA */
+/* MAIN DE LA WEB */
 
 .nosik-main-container {
     margin: 40px;
 }
+
+/* PÁGINA DE LA GALERÍA */
 
 .nosik-gallery-container {
     display: flex;
@@ -68,6 +71,15 @@ body {
 .nosik-main-galery-artwork {
     width: 200px;
     padding: 11px;
+    border: 1px solid red;
+}
+
+/* PÁGINA DE SOBRE MI */
+
+.nosik-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid red;
 }
 
