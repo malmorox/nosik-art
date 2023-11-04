@@ -70,6 +70,10 @@ body {
     font-size: 12px;
 }
 
+.hidden-cart{
+    display: none;
+}
+
 .nosik-cart-products {
     position: absolute;
     top: 50px;
@@ -98,19 +102,19 @@ body {
     flex: 0.8;
 }
 
-.titulo-producto-carrito{
+.cart-product-amount {
+    font-weight: 400;
     font-size: 20px;
 }
 
-.precio-producto-carrito{
+.cart-product-name {
+    font-size: 20px;
+}
+
+.cart-product-price {
     font-weight: 700;
     font-size: 20px;
     margin-left: 10px;
-}
-
-.cantidad-producto-carrito{
-    font-weight: 400;
-    font-size: 20px;
 }
 
 .icon-close{
@@ -123,7 +127,7 @@ body {
     cursor: pointer;
 }
 
-.cart-total{
+.nosik-cart-total{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,18 +135,14 @@ body {
     gap: 20px;
 }
 
-.cart-total h3{
+.nosik-cart-total h3{
     font-size: 20px;
     font-weight: 700;
 }
 
-.total-pagar{
+.cart-total-topay {
     font-size: 20px;
     font-weight: 900;
-}
-
-.hidden-cart{
-    display: none;
 }
 
 /* MAIN DE LA WEB */
