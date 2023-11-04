@@ -7,19 +7,18 @@ cartButton.addEventListener('click', () => {
     cartProductsHidden.classList.toggle('hidden-cart');
 });
 
-/* ========================= */
 const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
 
-// Lista de todos los contenedores de productos
+// lista de todos los las obras de la galeria
 const productsList = document.querySelector('.container-items');
 
-// Variable de arreglos de Productos
+// array con todos los productos del carrito
 let allProducts = [];
 
-const valorTotal = document.querySelector('.total-pagar');
+const toPayTotal = document.querySelector('.cart-total-topay');
 
-const countProducts = document.querySelector('#contador-productos');
+const cartCount = document.querySelector('#cart-count');
 
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');

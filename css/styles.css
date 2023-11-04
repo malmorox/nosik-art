@@ -70,7 +70,7 @@ body {
     font-size: 12px;
 }
 
-.hidden-cart{
+.hidden-cart {
     display: none;
 }
 
@@ -86,7 +86,7 @@ body {
 
 }
 
-.cart-product{
+.nosik-cart-products .product {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,7 +96,7 @@ body {
 
 }
 
-.info-cart-product{
+.product-info {
     display: flex;
     justify-content: space-between;
     flex: 0.8;
@@ -117,12 +117,12 @@ body {
     margin-left: 10px;
 }
 
-.icon-close{
+.delete-icon{
     width: 25px;
     height: 25px;
 }
 
-.icon-close:hover{
+.delete-icon:hover{
     stroke: red;
     cursor: pointer;
 }
