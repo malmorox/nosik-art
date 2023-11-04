@@ -94,8 +94,8 @@ body {
 }
 
 .nosik-art-piece .image img {
-    width: 200px; /* Ajusta el tamaño de la foto de perfil según tus preferencias */
-    height: 200px; /* Ajusta el tamaño de la foto de perfil según tus preferencias */
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
