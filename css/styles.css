@@ -90,7 +90,7 @@ body {
 
 }
 
-.nosik-cart-products .product {
+.nosik-cart-products .cart-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -148,6 +148,12 @@ body {
     font-size: 20px;
     font-weight: 900;
 }
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+}
+
 
 /* MAIN DE LA WEB */
 
