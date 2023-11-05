@@ -11,7 +11,7 @@ const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
 
 // lista de todos los las obras de la galeria
-const productsList = document.querySelector('.container-items');
+const productsList = document.querySelector('.nosik-main-container');
 
 // array con todos los productos del carrito
 let allProducts = [];
@@ -24,7 +24,7 @@ const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
 
 productsList.addEventListener('click', e => {
-    if (e.target.classList.contains('btn-add-cart')) {
+    if (e.target.classList.contains('add-to-cart')) {
         const product = e.target.parentElement;
 
         const infoProduct = {
@@ -56,7 +56,7 @@ productsList.addEventListener('click', e => {
 });
 
 rowProduct.addEventListener('click', e => {
-    if (e.target.classList.contains('icon-close')) {
+    if (e.target.classList.contains('delete-icon')) {
         const product = e.target.parentElement;
         const title = product.querySelector('p').textContent;
 
@@ -93,25 +93,12 @@ const showHTML = () => {
         containerProduct.classList.add('cart-product');
 
         containerProduct.innerHTML = `
-            <div class="info-cart-product">
-                <span class="cantidad-producto-carrito">${product.quantity}</span>
-                <p class="titulo-producto-carrito">${product.title}</p>
-                <span class="precio-producto-carrito">${product.price}</span>
+            <div class="product-info">
+                <span class="cart-product-amount">${product.quantity}</span>
+                <p class="cart-product-name">${product.title}</p>
+                <span class="cart-product-price">${product.price}</span>
             </div>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="icon-close"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                />
-            </svg>
+            <a href="#" class="delete-icon"><i class="fas fa-times"></i></a>
         `;
 
         rowProduct.append(containerProduct);
@@ -121,6 +108,6 @@ const showHTML = () => {
         totalOfProducts = totalOfProducts + product.quantity;
     });
 
-    valorTotal.innerText = `$${total}`;
-    countProducts.innerText = totalOfProducts;
+    toPayTotal.innerText = `$${total}`;
+    cartCount.innerText = totalOfProducts;
 };
