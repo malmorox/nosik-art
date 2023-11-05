@@ -1,3 +1,5 @@
+/* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
+
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('nosik-main-galery-artwork')) {
         redirectToArtDetails();
