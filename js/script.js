@@ -1,3 +1,17 @@
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('nosik-main-galery-artwork')) {
+        redirectToArtDetails();
+    }
+});
+
+function redirectToArtDetails() {
+    const companyPage = 'art-piece.html';
+    if (companyPage) {
+        window.location.href = companyPage;
+    }
+}
+
+
 /* CARRITO DE COMPRA */
 
 const cartButton = document.querySelector('.cart-icon');
