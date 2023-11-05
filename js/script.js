@@ -1,6 +1,6 @@
 /* CARRITO DE COMPRA */
 
-const cartButton = document.querySelector('.nosik-cart-icon');
+const cartButton = document.querySelector('.cart-icon');
 const cartProductsHidden = document.querySelector('.nosik-cart-products');
 
 cartButton.addEventListener('click', () => {
@@ -50,7 +50,6 @@ productsList.addEventListener('click', e => {
         } else {
             allProducts = [...allProducts, infoProduct];
         }
-
         showHTML();
     }
 });

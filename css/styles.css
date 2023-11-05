@@ -70,6 +70,10 @@ body {
     font-size: 12px;
 }
 
+.hidden {
+    display: none;
+}
+
 .hidden-cart {
     display: none;
 }
