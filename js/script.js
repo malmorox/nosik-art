@@ -25,12 +25,12 @@ const cartTotal = document.querySelector('.cart-total');
 
 productsList.addEventListener('click', e => {
     if (e.target.classList.contains('add-to-cart')) {
-        const product = e.target.parentElement;
+        const product = e.target.parentElement.parentElement;
 
         const infoProduct = {
             quantity: 1,
-            title: product.querySelector('h2').textContent,
-            price: product.querySelector('p').textContent,
+            title: product.querySelector('.name').textContent,
+            price: product.querySelector('.price').textContent,
         };
 
         const exits = allProducts.some(
