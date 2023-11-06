@@ -96,19 +96,18 @@ body {
 
 }
 
-.nosik-cart-products .cart-product {
+.cart-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 30px;
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
 }
 
 .product-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex: 0.8;
 }
 
@@ -160,7 +159,6 @@ body {
     text-align: center;
 }
 
-
 /* MAIN DE LA WEB */
 
 .nosik-main {
@@ -170,6 +168,29 @@ body {
 
 .nosik-main-container {
     margin: 40px;
+}
+
+/* PÁGINA DE SOBRE MI */
+
+.nosik-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.nosik-about-photo {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.nosik-about-photo img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 /* PÁGINA DE LA GALERÍA */
@@ -194,14 +215,21 @@ body {
     transition: all .5s;
 }
 
-/* PÁGINA DE SOBRE MI */
-
-.nosik-about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid red;
+/*.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
 }
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}*/
 
 /* PÁGINA DE LA DETALLES */
 
@@ -216,7 +244,6 @@ body {
     height: 200px;
     margin: 0 auto;
     border: 1px solid red;
-
 }
 
 .art-piece-info {
