@@ -24,8 +24,14 @@ body {
     background: #909090;
 }
 
-.nosik-header-logo img {
+.nosik-header-logo {
+    width: 200px;
+    height: 50px;
+}
 
+.nosik-header-logo img {
+    object-fit: cover;
+    width: 200px;
 }
 
 .nosik-header-list {
@@ -199,20 +205,20 @@ body {
 
 /* PÁGINA DE LA DETALLES */
 
-/*.sobre-mi {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.nosik-art-piece {
+    display: flex;
+    flex-direction: row;
 }
 
 .nosik-art-piece .image img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    display: block;
     margin: 0 auto;
+}
+
+.art-piece-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .art-piece-info .name {
