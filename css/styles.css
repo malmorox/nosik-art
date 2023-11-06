@@ -235,6 +235,13 @@ body {
     margin-top: 10px;
 }
 
+.art-piece-pay-zone {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #8d8d8d;
+}
+
 /* FOOTER DE LA WEB */
 
 .nosik-footer {
