@@ -242,6 +242,14 @@ body {
     border: 1px solid #8d8d8d;
 }
 
+.button {
+    cursor: pointer;
+}
+
+.buy-now {
+    margin-top: 7px;
+}
+
 /* FOOTER DE LA WEB */
 
 .nosik-footer {
