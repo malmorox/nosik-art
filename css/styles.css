@@ -167,8 +167,9 @@ body {
 }
 
 .nosik-main-container {
-    margin: 40px;
+    margin: 30px;
 }
+
 
 /* PÁGINA DE SOBRE MI */
 
@@ -176,21 +177,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+    border: 1px solid lightslategrey;
 }
 
 .nosik-about-photo {
     width: 200px;
-    height: 50px;
+    height: 90px;
+    top: 30px;
     display: flex;
     align-items: center;
     border-radius: 10px;
 }
 
 .nosik-about-photo img {
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.nosik-about-name{
+    text-align: center;
+}
+
+.nosik-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightslategrey;
 }
 
 /* PÁGINA DE LA GALERÍA */
@@ -239,11 +254,20 @@ body {
     gap: 20px;
 }
 
-.nosik-art-piece .image img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+.nosik-art-piece .image {
+    padding: 3px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid red;
+}
+
+.nosik-art-piece .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .art-piece-info {

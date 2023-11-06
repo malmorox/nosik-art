@@ -123,3 +123,23 @@ const showHTML = () => {
     toPayTotal.innerText = `$${total}`;
     cartCount.innerText = totalOfProducts;
 };
+
+/*
+function findWinner() {
+    if(playerCount % 2 === 0) {
+        color = "red";
+        jugador = '1';
+    } else {
+        color = "yellow";
+        jugador = '2';
+    }
+
+    if(findRows(color) || findColumns(color)) {
+            textContainer.innerHTML = "<h1>El jugador " +jugador+ " ha ganado</h1>";
+            return true;
+        }
+    } else {
+        textContainer.innerHTML = "<h1>Empate</h1>";
+        return false;
+    }
+}*/
