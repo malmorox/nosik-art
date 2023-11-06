@@ -7,10 +7,7 @@ document.addEventListener('click', function (event) {
 });
 
 function redirectToArtDetails() {
-    const companyPage = 'art-piece.html';
-    if (companyPage) {
-        window.location.href = companyPage;
-    }
+    window.location.href = 'art-piece.html';
 }
 
 
