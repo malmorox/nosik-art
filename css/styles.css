@@ -173,11 +173,16 @@ body {
 
 /* PÁGINA DE SOBRE MI */
 
+.container {
+    border-radius: 10px;
+}
+
 .nosik-about {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid lightslategrey;
+    margin-bottom: 15px;
 }
 
 .nosik-about-photo {
@@ -203,7 +208,7 @@ body {
 
 .nosik-contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     border: 1px solid lightslategrey;
 }
