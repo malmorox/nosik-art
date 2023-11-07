@@ -18,9 +18,11 @@ body {
 
 .nosik-header {
     padding: 7px 20px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
     background: #909090;
 }
 
@@ -163,7 +165,7 @@ body {
 
 .nosik-main {
     grid-area: main;
-    margin: 0;
+    margin-top: 75px;
 }
 
 .nosik-main-container {
@@ -216,40 +218,40 @@ body {
 /* PÁGINA DE LA GALERÍA */
 
 .nosik-gallery-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 15px;
 }
 
 .nosik-main-galery-artwork {
-    width: 200px;
-    padding: 11px;
+    width: 250px;
     border: 1px solid red;
     border-radius: 5px;
 }
 
-.painting img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: all .5s;
+.nosik-main-galery-artwork:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-/*.item img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: all .5s;
-}
-
-.item figure{
+.painting {
     overflow: hidden;
 }
 
-.item:hover img{
-    transform: scale(1.2);
-}*/
+.painting img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+.paiting-info {
+    padding: 15px 30px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 /* PÁGINA DE LA DETALLES */
 
