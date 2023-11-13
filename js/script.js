@@ -23,6 +23,7 @@ function fillInfoInToDetails(name, description, price, image) {
     const artPiecePrice = ART_PIECE_DETAILS.getElementById('price');
     const artPieceImage = ART_PIECE_DETAILS.getElementById('image');
     //asigna los valores del cuadro de la pagina 'Galería' en la página de detalles de la obra
+    console.log('fillInfoInToDetails is running');
     artPieceName.textContent = name;
     artPieceDescription.textContent = description;
     artPiecePrice.textContent = price;
