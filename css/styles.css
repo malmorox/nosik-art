@@ -177,6 +177,7 @@ body {
 
 .container {
     border-radius: 10px;
+    padding: 20px;
 }
 
 .nosik-about {
@@ -224,13 +225,14 @@ body {
     gap: 15px;
 }
 
-.nosik-main-galery-artwork {
+.nosik-galery-artwork {
     width: 250px;
     border: 1px solid red;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-.nosik-main-galery-artwork:hover {
+.nosik-galery-artwork:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 

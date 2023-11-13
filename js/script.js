@@ -1,13 +1,32 @@
 /* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
 
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('nosik-main-galery-artwork')) {
+const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
+GALLERY_CONTAINER.addEventListener('click', function (event) {
+    if (event.target.classList.contains('nosik-galery-artwork')) {
+        const name = event.target.getAttribute('data-name');
+        const description = event.target.getAttribute('data-author');
+        const price = event.target.getAttribute('data-price');
+        const image = event.target.getAttribute('data-image');
+        fillInfoInToDetails(name, description, price, image);
         redirectToArtDetails();
     }
 });
 
 function redirectToArtDetails() {
     window.location.href = 'art-piece.html';
+}
+
+const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
+function fillInfoInToDetails(name, description, price, image) {
+    const artPieceName = ART_PIECE_DETAILS.getElementById('name');
+    const artPieceDescription = ART_PIECE_DETAILS.getElementById('description');
+    const artPiecePrice = ART_PIECE_DETAILS.getElementById('price');
+    const artPieceImage = ART_PIECE_DETAILS.getElementById('image');
+    //asigna los valores del cuadro de la pagina 'Galería' en la página de detalles de la obra
+    artPieceName.textContent = name;
+    artPieceDescription.textContent = description;
+    artPiecePrice.textContent = price;
+    artPieceImage.src = image;
 }
 
 
