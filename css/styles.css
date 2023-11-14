@@ -17,26 +17,23 @@ body {
 /* HEADER DE LA WEB */
 
 .nosik-header {
-    padding: 7px 20px;
+    padding: 0 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    gap: 20px;
     background: #909090;
 }
 
-.nosik-header-logo {
-    width: 200px;
+.nosik-header-logo img {
+    width: 70px;
     height: 50px;
 }
 
-.nosik-header-logo img {
-    object-fit: cover;
-    width: 200px;
-}
-
 .nosik-header-list {
+    border: 1px solid red;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -46,6 +43,10 @@ body {
     margin-right: 20px;
     display: inline-block;
     text-align: center;
+}
+
+.nosik-header-list li:last-child {
+    margin-right: 0;
 }
 
 .nosik-header-list a {
