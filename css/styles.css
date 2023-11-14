@@ -255,6 +255,10 @@ body {
     gap: 10px;
 }
 
+.art-description {
+    display: none;
+}
+
 /* PÁGINA DE LA DETALLES */
 
 .nosik-art-piece {
