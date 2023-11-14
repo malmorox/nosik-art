@@ -1,19 +1,21 @@
 /* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
 
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
-GALLERY_CONTAINER.addEventListener('click', function (event) {
-    if (event.target.classList.contains('nosik-galery-artwork')) {
-        const name = event.target.getAttribute('data-name');
-        const description = event.target.getAttribute('data-author');
-        const price = event.target.getAttribute('data-price');
-        const image = event.target.getAttribute('data-image');
+GALLERY_CONTAINER.addEventListener('click', function (e) {
+    if (e.target.classList.contains('nosik-galery-artwork')) {
+        const name = e.target.querySelector('.art-name h2').textContent.trim();
+        const description = e.target.querySelector('.art-description p').textContent.trim();
+        const price = e.target.querySelector('.art-price span').textContent.trim();
+        const image = e.target.querySelector('.art-image img').src;
         fillInfoInToDetails(name, description, price, image);
         redirectToArtDetails();
     }
 });
 
 function redirectToArtDetails() {
-    window.location.href = 'art-piece.html';
+    setTimeout(function () {
+        window.location.href = 'art-piece.html';
+    }, 100);
 }
 
 const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
@@ -36,9 +38,9 @@ function fillInfoInToDetails(name, description, price, image) {
 const cartButton = document.querySelector('.cart-icon');
 const cartProductsHidden = document.querySelector('.nosik-cart-products');
 
-cartButton.addEventListener('click', () => {
+/*cartButton.addEventListener('click', () => {
     cartProductsHidden.classList.toggle('hidden-cart');
-});
+});*/
 
 const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
