@@ -83,7 +83,7 @@ showArtWorks();
 
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
 GALLERY_CONTAINER.addEventListener('click', function (e) {
-    if (e.target.classList.contains('nosik-galery-artwork')) {
+    if (e.target.classList.contains('nosik-gallery-artwork')) {
         const name = e.target.querySelector('.art-name h2').textContent.trim();
         const description = e.target.querySelector('.art-description p').textContent.trim();
         const price = e.target.querySelector('.art-price span').textContent.trim();
