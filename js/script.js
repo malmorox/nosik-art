@@ -1,3 +1,77 @@
+/* GALERÍA - OBRAS  */
+
+const artwoks = [
+    {
+        image: "../img/art/cuadro1.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro2.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro3.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro4.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro5.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro6.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+    {
+        image: "../img/art/cuadro7.jpg", name: "Picasso", description: "Picasso", price: "$400"
+    },
+];
+
+function createArtWorks() {
+    let galleryContainer = document.getElementById("nosik-gallery-container");
+
+    artwoks.forEach(function(artpiece) {
+        let artworkContainer = document.createElement("div");
+        artworkContainer.className = "nosik-gallery-artwork";
+
+        let paintingContainer = document.createElement("div");
+        paintingContainer.className = "painting";
+
+        let img = document.createElement("img");
+        img.src = artpiece.image;
+        img.alt = "";
+        img.className = "art-image";
+
+        paintingContainer.appendChild(img);
+
+        let paintingInfoContainer = document.createElement("div");
+        paintingInfoContainer.className = "paiting-info";
+
+        var artName = document.createElement("div");
+        artName.className = "art-name";
+        artName.innerHTML = "<h2>" + artpiece.name + "</h2>";
+
+        var artDescription = document.createElement("div");
+        artDescription.className = "art-description";
+        artDescription.innerHTML = "<p>" + artpiece.description + "</p>";
+
+        var artPrice = document.createElement("div");
+        artPrice.className = "art-price";
+        artPrice.innerHTML = "<span>" + artpiece.price + "</span>";
+
+        var btnAddCart = document.createElement("button");
+        btnAddCart.className = "btn-add-cart";
+        btnAddCart.textContent = "Añadir al carrito";
+
+        paintingInfoContainer.appendChild(artName);
+        paintingInfoContainer.appendChild(artDescription);
+        paintingInfoContainer.appendChild(artPrice);
+        paintingInfoContainer.appendChild(btnAddCart);
+
+        artworkContainer.appendChild(paintingContainer);
+        artworkContainer.appendChild(paintingInfoContainer);
+
+        galleryContainer.appendChild(artworkContainer);
+    });
+}
+
 /* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
 
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
