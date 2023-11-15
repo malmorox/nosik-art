@@ -82,12 +82,14 @@ showArtWorks();
 /* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
 
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
+
 GALLERY_CONTAINER.addEventListener('click', function (e) {
-    if (e.target.classList.contains('nosik-gallery-artwork')) {
-        const name = e.target.querySelector('.art-name h2').textContent.trim();
-        const description = e.target.querySelector('.art-description p').textContent.trim();
-        const price = e.target.querySelector('.art-price span').textContent.trim();
-        const image = e.target.querySelector('.art-image img').src;
+    const clickedArtwork = e.target.closest('.nosik-gallery-artwork');
+    if (clickedArtwork) {
+        let name = e.target.querySelector('.art-name h2').textContent.trim();
+        let description = e.target.querySelector('.art-description p').textContent.trim();
+        let price = e.target.querySelector('.art-price span').textContent.trim();
+        let image = e.target.querySelector('.art-image img').src;
         console.log(name, description, price, image);
         fillInfoInToDetails(name, description, price, image);
         redirectToArtPieceDetails();
