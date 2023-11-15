@@ -238,11 +238,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.painting {
+.art-image {
     overflow: hidden;
 }
 
-.painting img {
+.art-image img {
     width: 100%;
     height: 270px;
     object-fit: cover;

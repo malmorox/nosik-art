@@ -38,12 +38,12 @@ function createArtWork(artWork) {
     artworkContainer.className = "nosik-gallery-artwork";
 
     let paintingContainer = document.createElement("div");
-    paintingContainer.className = "painting";
+    paintingContainer.className = "art-image";
 
     let artImage = document.createElement("img");
     artImage.src = artWork.image;
     artImage.alt = "";
-    artImage.className = "art-image";
+    artImage.className = "painting";
 
     paintingContainer.appendChild(artImage);
 
