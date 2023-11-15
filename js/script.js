@@ -86,10 +86,10 @@ const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
 GALLERY_CONTAINER.addEventListener('click', function (e) {
     const clickedArtwork = e.target.closest('.nosik-gallery-artwork');
     if (clickedArtwork) {
-        let name = e.target.querySelector('.art-name h2').textContent.trim();
-        let description = e.target.querySelector('.art-description p').textContent.trim();
-        let price = e.target.querySelector('.art-price span').textContent.trim();
-        let image = e.target.querySelector('.art-image img').src;
+        let name = clickedArtwork.querySelector('.art-name h2').textContent.trim();
+        let description = clickedArtwork.querySelector('.art-description p').textContent.trim();
+        let price = clickedArtwork.querySelector('.art-price span').textContent.trim();
+        let image = clickedArtwork.querySelector('.art-image img').src;
         console.log(name, description, price, image);
         fillInfoInToDetails(name, description, price, image);
         redirectToArtPieceDetails();
