@@ -27,44 +27,42 @@ const ARTWORKS = [
 function showArtWorks() {
     let GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
 
-    ARTWORKS.forEach((image) => {
-        let artwork = createArtWork(image, name, description, price);
-        GALLERY_CONTAINER.appendChild(artwork);
+    ARTWORKS.forEach((artWork) => {
+        let artPiece = createArtWork(artWork);
+        GALLERY_CONTAINER.appendChild(artPiece);
     });
 }
 
-function createArtWork() {
-    let galleryContainer = document.getElementById("nosik-gallery-container");
-
+function createArtWork(artWork) {
     let artworkContainer = document.createElement("div");
     artworkContainer.className = "nosik-gallery-artwork";
 
     let paintingContainer = document.createElement("div");
     paintingContainer.className = "painting";
 
-    let img = document.createElement("img");
-    img.src = artpiece.image;
-    img.alt = "";
-    img.className = "art-image";
+    let artImage = document.createElement("img");
+    artImage.src = artWork.image;
+    artImage.alt = "";
+    artImage.className = "art-image";
 
-    paintingContainer.appendChild(img);
+    paintingContainer.appendChild(artImage);
 
     let paintingInfoContainer = document.createElement("div");
     paintingInfoContainer.className = "paiting-info";
 
-    var artName = document.createElement("div");
+    let artName = document.createElement("div");
     artName.className = "art-name";
-    artName.innerHTML = "<h2>" + artpiece.name + "</h2>";
+    artName.innerHTML = "<h2>" + artWork.name + "</h2>";
 
-    var artDescription = document.createElement("div");
+    let artDescription = document.createElement("div");
     artDescription.className = "art-description";
-    artDescription.innerHTML = "<p>" + artpiece.description + "</p>";
+    artDescription.innerHTML = "<p>" + artWork.description + "</p>";
 
-    var artPrice = document.createElement("div");
+    let artPrice = document.createElement("div");
     artPrice.className = "art-price";
-    artPrice.innerHTML = "<span>" + artpiece.price + "</span>";
+    artPrice.innerHTML = "<span>" + artWork.price + "</span>";
 
-    var btnAddCart = document.createElement("button");
+    let btnAddCart = document.createElement("button");
     btnAddCart.className = "btn-add-cart";
     btnAddCart.textContent = "Añadir al carrito";
 
@@ -76,8 +74,10 @@ function createArtWork() {
     artworkContainer.appendChild(paintingContainer);
     artworkContainer.appendChild(paintingInfoContainer);
 
-    galleryContainer.appendChild(artworkContainer);
+    return artworkContainer;
 }
+
+showArtWorks();
 
 /* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
 
