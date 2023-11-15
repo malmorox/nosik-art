@@ -89,11 +89,11 @@ GALLERY_CONTAINER.addEventListener('click', function (e) {
         const price = e.target.querySelector('.art-price span').textContent.trim();
         const image = e.target.querySelector('.art-image img').src;
         fillInfoInToDetails(name, description, price, image);
-        redirectToArtDetails();
+        redirectToArtPieceDetails();
     }
 });
 
-function redirectToArtDetails() {
+function redirectToArtPieceDetails() {
     setTimeout(function () {
         window.location.href = 'art-piece.html';
     }, 100);

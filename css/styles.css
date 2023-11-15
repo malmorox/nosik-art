@@ -12,6 +12,7 @@ body {
     "main" 1fr
     "footer" auto;
     gap: 8px;
+    background: #efefef;
 }
 
 /* HEADER DE LA WEB */
@@ -222,14 +223,15 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    gap: 15px;
+    row-gap: 45px;
 }
 
 .nosik-gallery-artwork {
     width: 250px;
-    border: 1px solid red;
+    border: 0.5px solid #acacac;
     border-radius: 5px;
     cursor: pointer;
+    background: white;
 }
 
 .nosik-gallery-artwork:hover {
@@ -245,6 +247,8 @@ body {
     height: 270px;
     object-fit: cover;
     transition: all .5s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .paiting-info {
