@@ -88,6 +88,7 @@ GALLERY_CONTAINER.addEventListener('click', function (e) {
         const description = e.target.querySelector('.art-description p').textContent.trim();
         const price = e.target.querySelector('.art-price span').textContent.trim();
         const image = e.target.querySelector('.art-image img').src;
+        console.log(name, description, price, image);
         fillInfoInToDetails(name, description, price, image);
         redirectToArtPieceDetails();
     }
@@ -170,7 +171,7 @@ productsList.addEventListener('click', e => {
     }
 });
 
-rowProduct.addEventListener('click', e => {
+/*rowProduct.addEventListener('click', e => {
     if (e.target.classList.contains('delete-icon')) {
         const product = e.target.parentElement;
         const title = product.querySelector('p').textContent;
@@ -183,7 +184,7 @@ rowProduct.addEventListener('click', e => {
 
         showHTML();
     }
-});
+});*/
 
 // funcion para mostrar  HTML
 const showHTML = () => {
