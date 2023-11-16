@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -50,6 +55,7 @@ body {
 }
 
 .nosik-header-list a {
+    font-family: 'Montserrat-Regular';
     text-decoration: none;
     color: white;
 }
@@ -190,8 +196,8 @@ body {
 }
 
 .nosik-about-photo {
-    width: 200px;
-    height: 90px;
+    width: 400px;
+    height: 180px;
     top: 30px;
     display: flex;
     align-items: center;
@@ -259,8 +265,20 @@ body {
     gap: 10px;
 }
 
-.art-description {
+.paiting-info .art-name {
+
+}
+
+.paiting-info .art-year {
+
+}
+
+.paiting-info .art-description {
     display: none;
+}
+
+.paiting-info .art-price {
+
 }
 
 /* PÁGINA DE LA DETALLES */

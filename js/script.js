@@ -2,31 +2,31 @@
 
 const ARTWORKS = [
     {
-        image: "../img/art/cuadro1.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro1.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
     {
-        image: "../img/art/cuadro2.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro2.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
     {
-        image: "../img/art/cuadro3.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro3.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
     {
-        image: "../img/art/cuadro4.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro4.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
     {
-        image: "../img/art/cuadro5.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro5.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2022"
     },
     {
-        image: "../img/art/cuadro6.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro6.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
     {
-        image: "../img/art/cuadro7.jpg", name: "Picasso", description: "Picasso", price: "$400"
+        image: "../img/art/cuadro7.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
     },
 ];
 
-function showArtWorks() {
-    let GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
+const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
 
+function showArtWorks() {
     ARTWORKS.forEach((artWork) => {
         let artPiece = createArtWork(artWork);
         GALLERY_CONTAINER.appendChild(artPiece);
@@ -54,22 +54,22 @@ function createArtWork(artWork) {
     artName.className = "art-name";
     artName.innerHTML = "<h2>" + artWork.name + "</h2>";
 
+    let artYear = document.createElement("div");
+    artYear.className = "art-year";
+    artYear.innerHTML = "<span>" + artWork.year + "</span>";
+
     let artDescription = document.createElement("div");
     artDescription.className = "art-description";
-    artDescription.innerHTML = "<p>" + artWork.description + "</p>";
+    artDescription.innerHTML = "<span>" + artWork.description + "</span>";
 
     let artPrice = document.createElement("div");
     artPrice.className = "art-price";
     artPrice.innerHTML = "<span>" + artWork.price + "</span>";
 
-    let btnAddCart = document.createElement("button");
-    btnAddCart.className = "btn-add-cart";
-    btnAddCart.textContent = "Añadir al carrito";
-
     paintingInfoContainer.appendChild(artName);
+    paintingInfoContainer.appendChild(artYear);
     paintingInfoContainer.appendChild(artDescription);
     paintingInfoContainer.appendChild(artPrice);
-    paintingInfoContainer.appendChild(btnAddCart);
 
     artworkContainer.appendChild(paintingContainer);
     artworkContainer.appendChild(paintingInfoContainer);
@@ -79,19 +79,18 @@ function createArtWork(artWork) {
 
 showArtWorks();
 
-/* GALERÍA - REDIRECCIÓN A EL DETALLE DE LA OBRA  */
-
-const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
+/* GALERÍA - REDIRECCIÓN AL DETALLE DE LA OBRA  */
 
 GALLERY_CONTAINER.addEventListener('click', function (e) {
     const clickedArtwork = e.target.closest('.nosik-gallery-artwork');
     if (clickedArtwork) {
         let name = clickedArtwork.querySelector('.art-name h2').textContent.trim();
-        let description = clickedArtwork.querySelector('.art-description p').textContent.trim();
+        let year = clickedArtwork.querySelector('.art-year span').textContent.trim();
+        let description = clickedArtwork.querySelector('.art-description span').textContent.trim();
         let price = clickedArtwork.querySelector('.art-price span').textContent.trim();
         let image = clickedArtwork.querySelector('.art-image img').src;
-        console.log(name, description, price, image);
-        fillInfoInToDetails(name, description, price, image);
+        //console.log(name, year, description, price, image);
+        fillInfoInToDetails(name, year, description, price, image);
         redirectToArtPieceDetails();
     }
 });
