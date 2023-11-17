@@ -258,11 +258,18 @@ body {
 }
 
 .paiting-info {
-    padding: 15px 30px;
+    padding: 20px;
     line-height: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.paiting-info .art-name h2,
+.paiting-info .art-year span,
+.paiting-info .art-price span {
+    padding: 0;
+    margin: 0;
 }
 
 .paiting-info .art-name {
@@ -270,7 +277,12 @@ body {
 }
 
 .paiting-info .art-year {
+    margin-top: -7px;
+}
 
+.paiting-info .art-year span {
+    font-size: 13px;
+    font-family:;
 }
 
 .paiting-info .art-description {
@@ -278,7 +290,12 @@ body {
 }
 
 .paiting-info .art-price {
+    align-self: flex-end;
+    margin-top: -7px;
+}
 
+.paiting-info .art-price span {
+    font-size: 20px;
 }
 
 /* PÁGINA DE LA DETALLES */
