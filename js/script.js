@@ -82,37 +82,40 @@ showArtWorks();
 /* GALERÍA - REDIRECCIÓN AL DETALLE DE LA OBRA  */
 
 GALLERY_CONTAINER.addEventListener('click', function (e) {
-    const clickedArtwork = e.target.closest('.nosik-gallery-artwork');
+    let clickedArtwork = e.target.closest('.nosik-gallery-artwork');
     if (clickedArtwork) {
-        let name = clickedArtwork.querySelector('.art-name h2').textContent.trim();
-        let year = clickedArtwork.querySelector('.art-year span').textContent.trim();
-        let description = clickedArtwork.querySelector('.art-description span').textContent.trim();
-        let price = clickedArtwork.querySelector('.art-price span').textContent.trim();
-        let image = clickedArtwork.querySelector('.art-image img').src;
-        //console.log(name, year, description, price, image);
+        let name = encodeURIComponent(clickedArtwork.querySelector('.art-name h2').textContent.trim());
+        let year = encodeURIComponent(clickedArtwork.querySelector('.art-year span').textContent.trim());
+        let description = encodeURIComponent(clickedArtwork.querySelector('.art-description span').textContent.trim());
+        let price = encodeURIComponent(clickedArtwork.querySelector('.art-price span').textContent.trim());
+        let image = encodeURIComponent(clickedArtwork.querySelector('.art-image img').src);
+        console.log(name, year, description, price, image);
         fillInfoInToDetails(name, year, description, price, image);
-        redirectToArtPieceDetails();
+        redirectToArtPieceDetails(name, year, description, price, image);
     }
 });
 
-function redirectToArtPieceDetails() {
+function redirectToArtPieceDetails(name, year, description, price, image) {
     setTimeout(function () {
-        window.location.href = 'art-piece.html';
+        let url = `art-piece.html?name=${name}&year=${year}&description=${description}&price=${price}&image=${image}`;
+        window.location.href = url;
     }, 100);
 }
 
 const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
-function fillInfoInToDetails(name, description, price, image) {
+function fillInfoInToDetails(name, year, description, price, image) {
     const artPieceName = ART_PIECE_DETAILS.getElementById('name');
+    const artPieceYear = ART_PIECE_DETAILS.getElementById('year');
     const artPieceDescription = ART_PIECE_DETAILS.getElementById('description');
     const artPiecePrice = ART_PIECE_DETAILS.getElementById('price');
     const artPieceImage = ART_PIECE_DETAILS.getElementById('image');
     //asigna los valores del cuadro de la pagina 'Galería' en la página de detalles de la obra
     console.log('fillInfoInToDetails is running');
-    artPieceName.textContent = name;
-    artPieceDescription.textContent = description;
-    artPiecePrice.textContent = price;
-    artPieceImage.src = image;
+    artPieceName.textContent = decodeURIComponent(name);
+    artPieceYear.textContent = decodeURIComponent(year);
+    artPieceDescription.textContent = decodeURIComponent(description);
+    artPiecePrice.textContent = decodeURIComponent(price);
+    artPieceImage.src = decodeURIComponent(image);
 }
 
 
