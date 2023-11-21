@@ -185,6 +185,7 @@ body {
 .container {
     border-radius: 10px;
     padding: 20px;
+    border: 1px solid lightslategrey;
 }
 
 .nosik-about {
@@ -212,15 +213,31 @@ body {
     margin: auto;
 }
 
-.nosik-about-name{
+#nosik-about-name{
+    text-align: center;
+    margin: 20px 20px 0;
+    padding: 0;
+}
+
+#nosik-about-alias {
+    margin: 10px;
+    padding: 0;
+}
+
+#nosik-about-biography {
+    width: 80%;
     text-align: center;
 }
 
 .nosik-contact {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    border: 1px solid lightslategrey;
+    justify-content: center;
+}
+
+.nosik-contact-form-section {
+    display: flex;
+    flex-direction: column;
 }
 
 /* PÁGINA DE LA GALERÍA */
