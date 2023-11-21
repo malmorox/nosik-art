@@ -2,25 +2,32 @@
 
 const ARTWORKS = [
     {
-        image: "../img/art/cuadro1.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro1.jpg", name: "Universitaria", description: "21x29.7cm\n" +
+            "Tinta sobre cartulina", price: "$480", year: "2023"
     },
     {
-        image: "../img/art/cuadro2.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro2.jpg", name: "La mujer de azul", description: "Acrílico sobre lienzo\n" +
+            "29,7 x 42 cm", price: "$350", year: "2019"
     },
     {
-        image: "../img/art/cuadro3.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro3.jpg", name: "Guardaba el cajón", description: "Tinta acrílica sobre cartulina\n" +
+            "21x29.7cm", price: "$400", year: "2022"
     },
     {
-        image: "../img/art/cuadro4.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro4.jpg", name: "Atónito", description: "Spray sobre madera\n" +
+            "50 x 80 cm", price: "$523", year: "2021"
     },
     {
-        image: "../img/art/cuadro5.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2022"
+        image: "../img/art/cuadro5.jpg", name: "Yendo a la guerra", description: "29.7x42cm\n" +
+            "Lápices/Acuarelas sobre cartulina", price: "$210", year: "2023"
     },
     {
-        image: "../img/art/cuadro6.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro6.jpg", name: "Primavera e Indio", description: "Acrílico sobre madera blanca\n" +
+            "60 x 60cm", price: "$400", year: "2022"
     },
     {
-        image: "../img/art/cuadro7.jpg", name: "Picasso", description: "Picasso", price: "$400", year: "2023"
+        image: "../img/art/cuadro7.jpg", name: "Divorcio en el techo", description: "Tinta acrílica sobre cartulina\n" +
+            "35x50cm", price: "$400", year: "2022"
     },
 ];
 
