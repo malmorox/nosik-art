@@ -106,16 +106,16 @@ function redirectToArtPieceDetails(name, year, description, price, image) {
     setTimeout(function () {
         let url = `art-piece.html?name=${name}&year=${year}&description=${description}&price=${price}&image=${image}`;
         window.location.href = url;
-    }, 100);
+    }, 2000);
 }
 
 const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
 function fillInfoInToDetails(name, year, description, price, image) {
-    const artPieceName = ART_PIECE_DETAILS.getElementById('name');
-    const artPieceYear = ART_PIECE_DETAILS.getElementById('year');
-    const artPieceDescription = ART_PIECE_DETAILS.getElementById('description');
-    const artPiecePrice = ART_PIECE_DETAILS.getElementById('price');
-    const artPieceImage = ART_PIECE_DETAILS.getElementById('image');
+    const artPieceName = ART_PIECE_DETAILS.querySelector('#name');
+    const artPieceYear = ART_PIECE_DETAILS.querySelector('#year');
+    const artPieceDescription = ART_PIECE_DETAILS.querySelector('#description');
+    const artPiecePrice = ART_PIECE_DETAILS.querySelector('#price');
+    const artPieceImage = ART_PIECE_DETAILS.querySelector('#image');
     //asigna los valores del cuadro de la pagina 'Galería' en la página de detalles de la obra
     console.log('fillInfoInToDetails is running');
     artPieceName.textContent = decodeURIComponent(name);
