@@ -1,3 +1,32 @@
+/* SOBRE MÍ */
+
+//lista de ayuda del formulario de los inputs de tipo radio
+document.addEventListener('DOMContentLoaded', function() {
+    const HELP_LIST = document.querySelector('.nosik-contact-form-helplist');
+
+    const HELP_OPTIONS = [
+        'Quiero saber más detalles de una obra en concreto',
+        'Me gustaría hablar personalmente con el artista',
+        'Necesito contactar para cualquier otra cosa'
+    ];
+
+    HELP_OPTIONS.forEach((textOption) => {
+        const li = document.createElement('li');
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'help-option';
+        label.appendChild(input);
+
+        let span = document.createElement('span');
+        span.textContent = textOption;
+        label.appendChild(span);
+
+        li.appendChild(label);
+        HELP_LIST.appendChild(li);
+    });
+});
+
 /* GALERÍA - OBRAS  */
 
 const ARTWORKS = [
@@ -60,22 +89,21 @@ function createArtWork(artWork) {
     let artName = document.createElement("div");
     artName.className = "art-name";
     artName.innerHTML = "<h2>" + artWork.name + "</h2>";
+    paintingInfoContainer.appendChild(artName);
 
     let artYear = document.createElement("div");
     artYear.className = "art-year";
     artYear.innerHTML = "<span>" + artWork.year + "</span>";
+    paintingInfoContainer.appendChild(artYear);
 
     let artDescription = document.createElement("div");
     artDescription.className = "art-description";
     artDescription.innerHTML = "<span>" + artWork.description + "</span>";
+    paintingInfoContainer.appendChild(artDescription);
 
     let artPrice = document.createElement("div");
     artPrice.className = "art-price";
     artPrice.innerHTML = "<span>" + artWork.price + "</span>";
-
-    paintingInfoContainer.appendChild(artName);
-    paintingInfoContainer.appendChild(artYear);
-    paintingInfoContainer.appendChild(artDescription);
     paintingInfoContainer.appendChild(artPrice);
 
     artworkContainer.appendChild(paintingContainer);
