@@ -97,32 +97,35 @@ GALLERY_CONTAINER.addEventListener('click', function (e) {
         let price = encodeURIComponent(clickedArtwork.querySelector('.art-price span').textContent.trim());
         let image = encodeURIComponent(clickedArtwork.querySelector('.art-image img').src);
         console.log(name, year, description, price, image);
-        fillInfoInToDetails(name, year, description, price, image);
         redirectToArtPieceDetails(name, year, description, price, image);
     }
 });
 
 function redirectToArtPieceDetails(name, year, description, price, image) {
-    setTimeout(function () {
-        let url = `art-piece.html?name=${name}&year=${year}&description=${description}&price=${price}&image=${image}`;
-        window.location.href = url;
-    }, 2000);
+    let url = `art-piece.html?name=${name}&year=${year}&description=${description}&price=${price}&image=${image}`;
+    window.location.href = url;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    fillInfoInToDetails();
+});
+
 const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
-function fillInfoInToDetails(name, year, description, price, image) {
-    const artPieceName = ART_PIECE_DETAILS.querySelector('#name');
-    const artPieceYear = ART_PIECE_DETAILS.querySelector('#year');
-    const artPieceDescription = ART_PIECE_DETAILS.querySelector('#description');
-    const artPiecePrice = ART_PIECE_DETAILS.querySelector('#price');
-    const artPieceImage = ART_PIECE_DETAILS.querySelector('#image');
+//función para rellenar en la página de detalles de la obra
+function fillInfoInToDetails() {
+    const artPieceName = ART_PIECE_DETAILS.querySelector('.art-piece-info #name');
+    const artPieceYear = ART_PIECE_DETAILS.querySelector('.art-piece-info #year');
+    const artPieceDescription = ART_PIECE_DETAILS.querySelector('.art-piece-info #description');
+    const artPiecePrice = ART_PIECE_DETAILS.querySelector('.art-piece-info #price');
+    const artPieceImage = ART_PIECE_DETAILS.querySelector('.art-piece-info #image');
     //asigna los valores del cuadro de la pagina 'Galería' en la página de detalles de la obra
     console.log('fillInfoInToDetails is running');
-    artPieceName.textContent = decodeURIComponent(name);
-    artPieceYear.textContent = decodeURIComponent(year);
-    artPieceDescription.textContent = decodeURIComponent(description);
-    artPiecePrice.textContent = decodeURIComponent(price);
-    artPieceImage.src = decodeURIComponent(image);
+    let params = new URLSearchParams(window.location.search);
+    artPieceName.textContent = decodeURIComponent(params.get('name'));
+    artPieceYear.textContent = decodeURIComponent(params.get('year'));
+    artPieceDescription.textContent = decodeURIComponent(params.get('description'));
+    artPiecePrice.textContent = decodeURIComponent(params.get('price'));
+    artPieceImage.src = decodeURIComponent(params.get('image'));
 }
 
 
