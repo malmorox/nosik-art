@@ -3,6 +3,7 @@
 //lista de ayuda del formulario de los inputs de tipo radio
 document.addEventListener('DOMContentLoaded', function() {
     const HELP_LIST = document.querySelector('.nosik-contact-form-helplist');
+    const TEXTAREA = document.querySelector('.nosik-contact-form-textarea');
 
     const HELP_OPTIONS = [
         'Quiero saber más detalles de una obra en concreto',
@@ -17,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         input.type = 'radio';
         input.name = 'help-option';
         label.appendChild(input);
+
+        //muestra el textarea cuando se hace clic en cualquier label
+        label.addEventListener('click', function() {
+            TEXTAREA.style.display = 'block';
+        });
 
         let span = document.createElement('span');
         span.textContent = textOption;
