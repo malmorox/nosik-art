@@ -270,6 +270,14 @@ body {
     padding: 0;
 }
 
+.nosik-contact-form-textarea {
+    margin-bottom: 15px;
+    resize: vertical;
+    height: 55px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
 .nosik-contact-form-submit {
     width: 100%;
     padding: 8px;
