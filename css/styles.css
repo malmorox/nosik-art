@@ -235,9 +235,64 @@ body {
     justify-content: center;
 }
 
+.nosik-contact-text {
+    display: flex;
+    align-items: center;
+}
+
+.nosik-contact-form {
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 .nosik-contact-form-section {
     display: flex;
     flex-direction: column;
+}
+
+.nosik-contact-form-fields {
+    flex: 1;
+    background: transparent;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #1f53c5;
+    font-size: 14px;
+}
+
+.nosik-contact-form-fields:last-of-type {
+    margin-bottom: 0;
+}
+
+.nosik-contact-form-helplist {
+    list-style: none;
+    padding: 0;
+}
+
+.nosik-contact-form-textarea {
+    margin-bottom: 15px;
+    resize: vertical;
+    height: 55px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.nosik-contact-form-submit {
+    width: 100%;
+    padding: 8px;
+    color: white;
+    border: 2px solid #1f53c5;
+    border-radius: 4px;
+    background: #1f53c5;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nosik-contact-form-submit:hover {
+    color: #1f53c5;;
+    border: 2px solid #1f53c5;
+    background: transparent;
 }
 
 /* PÁGINA DE LA GALERÍA */
