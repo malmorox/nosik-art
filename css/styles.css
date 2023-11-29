@@ -189,11 +189,12 @@ body {
 /* MAIN DE LA WEB */
 
 .nosik-main {
-    margin-top: 55px;
+    margin-top: 54px;
 }
 
 .nosik-main-container {
-    padding: 30px;
+    margin: 20px;
+    width: 100%;
 }
 
 
@@ -289,7 +290,8 @@ body {
 
 .nosik-contact-form-helplist {
     list-style: none;
-    padding: 0;
+    margin-left: -46px;
+    /*padding: 0;*/
 }
 
 .nosik-contact-form-textarea {
@@ -326,7 +328,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 45px;
     row-gap: 45px;
-    width: 100%;
+    width: 1000px;
 }
 
 /*@media (max-width: 2070px) {
@@ -343,6 +345,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     background: white;
+    justify-self: center;
 }
 
 .nosik-gallery-artwork:hover {
@@ -406,6 +409,7 @@ body {
 /* PÁGINA DE LA DETALLES */
 
 .nosik-art-piece {
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
@@ -418,7 +422,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .nosik-art-piece .image img {
@@ -431,7 +434,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid red;
 }
 
 .art-piece-info .name {
