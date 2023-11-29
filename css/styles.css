@@ -28,7 +28,11 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: #efefef;
+}
+
+main {
+    background-image: url("../img/web_background.jpg");
+    object-fit: cover;
 }
 
 /* HEADER DE LA WEB */
@@ -507,7 +511,8 @@ body {
     grid-area: footer;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10%;
     background: #484848;
 }
 
@@ -515,12 +520,12 @@ body {
     width: 150px;
 }
 
-#nosik-contact-div {
+.nosik-column-div {
     display: flex;
     flex-direction: column;
 }
 
-#nosik-title-contact {
+.nosik-title-column {
     margin-top: 0;
     color: white;
 }
@@ -534,7 +539,32 @@ body {
     margin-top: 20px;
 }
 
+.nosik-single-rrss-div {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+}
+
 .nosik-p-rrss {
     color: white;
     margin: 0;
+}
+
+.nosik-mail-div {
+    margin-top: 15px;
+}
+
+#nosik-mail-icon {
+    width: 20px;
+    object-fit: contain;
+}
+
+.nosik-rrss-a {
+    color: white;
+    text-decoration: none;
+}
+
+#nosik-payment-img {
+    width: 250px;
+    object-fit: contain;
 }
