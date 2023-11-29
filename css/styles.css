@@ -24,7 +24,7 @@ body {
 
 .nosik-header {
     padding: 0 20px;
-    width: 100%;
+    width: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;

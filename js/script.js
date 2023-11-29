@@ -168,15 +168,15 @@ function fillInfoInToDetails() {
 const cartButton = document.querySelector('.cart-icon');
 const cartProductsHidden = document.querySelector('.nosik-cart-products');
 
-/*cartButton.addEventListener('click', () => {
+cartButton.addEventListener('click', () => {
     cartProductsHidden.classList.toggle('hidden-cart');
-});*/
+});
 
 const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
 
 // lista de todos los las obras de la galeria
-const productsList = document.querySelector('.nosik-main-container');
+const productsList = document.querySelector('.nosik-art-piece');
 
 // array con todos los productos del carrito
 let allProducts = [];
@@ -219,7 +219,7 @@ productsList.addEventListener('click', e => {
     }
 });
 
-/*rowProduct.addEventListener('click', e => {
+rowProduct.addEventListener('click', e => {
     if (e.target.classList.contains('delete-icon')) {
         const product = e.target.parentElement;
         const title = product.querySelector('p').textContent;
@@ -232,7 +232,7 @@ productsList.addEventListener('click', e => {
 
         showHTML();
     }
-});*/
+})
 
 // funcion para mostrar  HTML
 const showHTML = () => {
@@ -275,23 +275,3 @@ const showHTML = () => {
     toPayTotal.innerText = `$${total}`;
     cartCount.innerText = totalOfProducts;
 };
-
-/*
-function findWinner() {
-    if(playerCount % 2 === 0) {
-        color = "red";
-        jugador = '1';
-    } else {
-        color = "yellow";
-        jugador = '2';
-    }
-
-    if(findRows(color) || findColumns(color)) {
-            textContainer.innerHTML = "<h1>El jugador " +jugador+ " ha ganado</h1>";
-            return true;
-        }
-    } else {
-        textContainer.innerHTML = "<h1>Empate</h1>";
-        return false;
-    }
-}*/
