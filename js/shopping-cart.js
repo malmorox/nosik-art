@@ -1,45 +1,44 @@
 /* CARRITO DE COMPRA */
 
 const cartButton = document.querySelector('.cart-icon');
+const cartCounter = document.querySelector('.nosik-cart-counter');
+const cartCount = document.querySelector('.nosik-cart-counter #cart-count');
 const cartProductsHidden = document.querySelector('.nosik-cart-products');
 
 cartButton.addEventListener('click', () => {
     cartProductsHidden.classList.toggle('hidden-cart');
 })
 
-const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
+const cartInfo = document.querySelector('.cart-product');
 
-// lista de todos los las obras de la galeria
-const productsList = document.querySelector('.nosik-main-container');
+//contenedor que contiene la informacion de los detalles de la obra
+const productsDetails = document.querySelector('.nosik-main-container');
 
-// array con todos los productos del carrito
+//array con todos los productos del carrito
 let allProducts = [];
 
-const toPayTotal = document.querySelector('.cart-total-topay');
-
-const cartCount = document.querySelector('#cart-count');
-
+const totalToPay = document.querySelector('.cart-total-topay');
 const cartEmpty = document.querySelector('.cart-empty');
-const cartTotal = document.querySelector('.cart-total');
+const cartTotal = document.querySelector('.nosik-cart-total');
 
-productsList.addEventListener('click', e => {
+productsDetails.addEventListener('click', function (e) {
     if (e.target.classList.contains('add-to-cart')) {
-        const product = e.target.closest('.nosik-art-piece');
+        const PRODUCT = e.target.closest('.nosik-art-piece');
 
-        const infoProduct = {
+        const PRODUCT_INFO = {
             quantity: 1,
-            title: product.querySelector('#name').textContent,
-            price: product.querySelector('#price').textContent,
+            name: PRODUCT.querySelector('#name').textContent,
+            price: PRODUCT.querySelector('#price').textContent,
         };
 
         const exits = allProducts.some(
-            product => product.title === infoProduct.title
+            product => product.name === PRODUCT_INFO.name
         );
 
         if (exits) {
             const products = allProducts.map(product => {
-                if (product.title === infoProduct.title) {
+                if (product.name === PRODUCT_INFO.name) {
                     product.quantity++;
                     return product;
                 } else {
@@ -48,25 +47,26 @@ productsList.addEventListener('click', e => {
             });
             allProducts = [...products];
         } else {
-            allProducts = [...allProducts, infoProduct];
+            allProducts = [...allProducts, PRODUCT_INFO];
         }
-        showHTML();
+        showCart();
     }
 });
 
 // funcion para mostrar  HTML
-const showHTML = () => {
+const showCart = () => {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
         rowProduct.classList.add('hidden');
         cartTotal.classList.add('hidden');
+        cartCounter.classList.add('hidden');
     } else {
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
         cartTotal.classList.remove('hidden');
+        cartCounter.classList.remove('hidden');
     }
 
-    // Limpiar HTML
     rowProduct.innerHTML = '';
 
     let total = 0;
@@ -85,13 +85,13 @@ const showHTML = () => {
             <a href="#" class="delete-icon"><i class="fas fa-times"></i></a>
         `;
 
-        rowProduct.append(containerProduct);
+        rowProduct.appendChild(containerProduct);
 
         total =
             total + parseInt(product.quantity * product.price.slice(1));
         totalOfProducts = totalOfProducts + product.quantity;
     });
 
-    toPayTotal.innerText = `$${total}`;
+    totalToPay.innerText = `$${total}`;
     cartCount.innerText = totalOfProducts;
 };

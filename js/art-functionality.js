@@ -115,7 +115,7 @@ const ART_PIECE_DETAILS = document.querySelector('.nosik-art-piece');
 
 //función para rellenar en la página de detalles de la obra
 function fillInfoInToDetails() {
-    const artPieceName = ART_PIECE_DETAILS.querySelector('.art-piece-info #name');
+    const artPieceName = document.querySelector('.art-piece-info #name');
     const artPieceYear = ART_PIECE_DETAILS.querySelector('.art-piece-info #year');
     const artPieceDescription = ART_PIECE_DETAILS.querySelector('.art-piece-info #description');
     const artPiecePrice = ART_PIECE_DETAILS.querySelector('.art-piece-info #price');
