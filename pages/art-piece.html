@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="../js/footer.js" defer></script>
     <script src="../js/art-functionality.js" defer></script>
+    <script src="../js/shopping-cart.js" defer></script>
 </head>
 <body>
 <header class="nosik-header">
@@ -14,34 +15,24 @@
         <a href="../index.html"><img src="../img/nosik_logo.svg" alt="nosik-logo"></a>
     </div>
     <ul class="nosik-header-list">
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Sobre mí</a></li>
-        <li><a href="">Galeria</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="about-me.html">Sobre mí</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
     </ul>
-
     <div class="nosik-header-shopping-cart">
         <div class="nosik-shopping-cart">
             <div class="nosik-cart-icon">
                 <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
             </div>
-            <div class="nosik-cart-counter">
+            <div class="nosik-cart-counter hidden">
                 <span id="cart-count">0</span>
             </div>
         </div>
         <div class="nosik-cart-products hidden-cart">
-            <div class="row-product hidden">
-                <div class="cart-product">
-                    <div class="product-info">
-                        <span class="cart-product-amount">1</span>
-                        <p class="cart-product-name">Zapatos Nike</p>
-                        <span class="cart-product-price">$80</span>
-                    </div>
-                    <a href="#" class="delete-icon"><i class="fas fa-times"></i></a>
-                </div>
-            </div>
+            <div class="row-product hidden"> </div>
             <div class="nosik-cart-total hidden">
                 <h3>Total:</h3>
-                <span class="cart-total-topay">$200</span>
+                <span class="cart-total-topay"></span>
             </div>
             <p class="cart-empty">El carrito está vacío</p>
         </div>
@@ -54,9 +45,9 @@
                 <img src="" alt="cuadro" id="image">
             </div>
             <div class="art-piece-info">
-                <h1 id="name"></h1> <span id="year"></span>
-                <p id="description"></p>
-                <p id="price"></p>
+                <h1 id="name"></h1> Picasso <span id="year"></span>
+                <p id="description"> Picasso </p>
+                <p id="price"> 90 </p>
             </div>
             <div class="art-piece-pay-zone">
                 <button class="button add-to-cart"> Añadir al carrito </button>
