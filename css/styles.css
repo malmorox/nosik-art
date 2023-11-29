@@ -1,22 +1,33 @@
 @font-face {
+    font-family: 'Montserrat-ExtraLight';
+    src: url(../fonts/Montserrat/Montserrat-ExtraLight.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url(../fonts/Montserrat/Montserrat-Light.ttf) format('truetype');
+}
+
+@font-face {
     font-family: 'Montserrat-Regular';
     src: url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
 }
 
-html {
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(../fonts/Montserrat/Montserrat-Medium.ttf) format('truetype');
+}
+
+/*html {
     height: 100%;
     width: 100%;
-}
+}*/
 
 body {
     min-height: 100vh;
     margin: 0;
-    display: grid;
-    grid:
-    "header" auto
-    "main" 1fr
-    "footer" auto;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -27,7 +38,6 @@ main {
 /* HEADER DE LA WEB */
 
 .nosik-header {
-    padding: 0 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -37,16 +47,20 @@ main {
     background: #909090;
 }
 
+.nosik-header-logo {
+    margin-left: 15px;
+}
+
 .nosik-header-logo img {
     width: 70px;
     height: 50px;
 }
 
-.nosik-header-list {
+/*.nosik-header-list {
     list-style: none;
     padding: 0;
     margin: 0;
-}
+}*/
 
 .nosik-header-list li {
     margin-right: 20px;
@@ -68,17 +82,21 @@ main {
 
 .nosik-header-shopping-cart {
     position: relative;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
 }
 
 .nosik-cart-counter {
     position: absolute;
     top: 55%;
-    right: 0;
+    right: 6px;
     background-color: #000;
     color: #fff;
-    width: 25px;
-    height: 25px;
-
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,12 +193,12 @@ main {
 /* MAIN DE LA WEB */
 
 .nosik-main {
-    grid-area: main;
-    margin-top: 75px;
+    margin-top: 54px;
 }
 
 .nosik-main-container {
-    margin: 30px;
+    margin: 20px;
+    width: 100%;
 }
 
 
@@ -221,11 +239,13 @@ main {
     text-align: center;
     margin: 20px 20px 0;
     padding: 0;
+    font-family: 'Montserrat-Medium';
 }
 
 #nosik-about-alias {
     margin: 10px;
     padding: 0;
+    font-family: 'Montserrat-Regular';
 }
 
 #nosik-about-biography {
@@ -237,16 +257,19 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 100px;
 }
 
 .nosik-contact-text {
     display: flex;
     align-items: center;
+    font-family: 'Montserrat-Regular';
 }
 
 .nosik-contact-form {
     padding: 30px;
     border-radius: 5px;
+    background: #fafafa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -271,13 +294,16 @@ main {
 
 .nosik-contact-form-helplist {
     list-style: none;
-    padding: 0;
+    margin-left: -46px;
+    /*padding: 0;*/
 }
 
 .nosik-contact-form-textarea {
     margin-bottom: 15px;
     resize: vertical;
     height: 55px;
+    min-height: 30px;
+    max-height: 100px;
     font-size: 12px;
     border-radius: 4px;
 }
@@ -304,9 +330,18 @@ main {
 .nosik-gallery-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    column-gap: 45px;
     row-gap: 45px;
+    width: 1000px;
 }
+
+/*@media (max-width: 2070px) {
+    .nosik-gallery-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}*/
 
 .nosik-gallery-artwork {
     width: 250px;
@@ -314,6 +349,7 @@ main {
     border-radius: 5px;
     cursor: pointer;
     background: white;
+    justify-self: center;
 }
 
 .nosik-gallery-artwork:hover {
@@ -377,6 +413,7 @@ main {
 /* PÁGINA DE LA DETALLES */
 
 .nosik-art-piece {
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
@@ -389,7 +426,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .nosik-art-piece .image img {
@@ -402,7 +438,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid red;
 }
 
 .art-piece-info .name {
