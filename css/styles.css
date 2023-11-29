@@ -370,12 +370,81 @@ body {
     margin-top: 7px;
 }
 
+/* INDEX */
+
+.nosik-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#nosik-index-title {
+    margin: 0px 0px 30px 0px;
+}
+
+/* carousel */
+#nosik-carousel {
+
+    height: 500px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#left-arrow {
+    width: 50px;
+    height: 90px;
+}
+
+.nosik-img-container {
+    display: flex;
+    gap: 30px;
+}
+
+.nosik-carousel-secondary-pic {
+    height: 400px;
+    object-fit: contain;
+}
+
 /* FOOTER DE LA WEB */
 
-.nosik-footer {
+#nosik-footer {
     grid-area: footer;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background: #484848;
+}
+
+#nosik-footer-logo {
+    width: 150px;
+}
+
+#nosik-contact-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#nosik-title-contact {
+    margin-top: 0;
+    color: white;
+}
+
+.nosik-p-contact {
+    margin-top: 0;
+    color: white;
+}
+
+#nosik-rrss-div {
+    margin-top: 20px;
+}
+
+.nosik-p-rrss {
+    color: white;
+    margin: 0;
 }

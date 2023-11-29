@@ -28,7 +28,7 @@ const ARTWORKS = [
     {
         image: "../img/art/cuadro7.jpg", name: "Divorcio en el techo", description: "Tinta acrílica sobre cartulina\n" +
             "35x50cm", price: "$400", year: "2022"
-    },
+    }
 ];
 
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
@@ -182,21 +182,6 @@ productsList.addEventListener('click', e => {
     }
 });
 
-/*rowProduct.addEventListener('click', e => {
-    if (e.target.classList.contains('delete-icon')) {
-        const product = e.target.parentElement;
-        const title = product.querySelector('p').textContent;
-
-        allProducts = allProducts.filter(
-            product => product.title !== title
-        );
-
-        console.log(allProducts);
-
-        showHTML();
-    }
-});*/
-
 // funcion para mostrar  HTML
 const showHTML = () => {
     if (!allProducts.length) {
@@ -239,22 +224,7 @@ const showHTML = () => {
     cartCount.innerText = totalOfProducts;
 };
 
-/*
-function findWinner() {
-    if(playerCount % 2 === 0) {
-        color = "red";
-        jugador = '1';
-    } else {
-        color = "yellow";
-        jugador = '2';
-    }
+//Método dinámico para generar el contenido del header
+function fillHeader() {
 
-    if(findRows(color) || findColumns(color)) {
-            textContainer.innerHTML = "<h1>El jugador " +jugador+ " ha ganado</h1>";
-            return true;
-        }
-    } else {
-        textContainer.innerHTML = "<h1>Empate</h1>";
-        return false;
-    }
-}*/
+}
