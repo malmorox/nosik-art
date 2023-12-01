@@ -29,7 +29,7 @@ productsDetails.addEventListener('click', function (e) {
         const PRODUCT_INFO = {
             quantity: 1,
             name: PRODUCT.querySelector('#name').textContent,
-            price: PRODUCT.querySelector('#price').textContent,
+            price: PRODUCT.querySelector('#price').textContent
         };
 
         const PRODUCT_EXIST = allProducts.findIndex(
