@@ -5,6 +5,9 @@ const cartCounter = document.querySelector('.nosik-cart-counter');
 const cartCount = document.querySelector('.nosik-cart-counter #cart-count');
 const cartProductsHidden = document.querySelector('.nosik-cart-products');
 
+const totalToPay = document.querySelector('.cart-total-topay');
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.nosik-cart-total');
 cartButton.addEventListener('click', () => {
     cartProductsHidden.classList.toggle('hidden-cart');
 })
@@ -18,10 +21,7 @@ const productsDetails = document.querySelector('.nosik-main-container');
 //array con todos los productos del carrito
 let allProducts = [];
 
-const totalToPay = document.querySelector('.cart-total-topay');
-const cartEmpty = document.querySelector('.cart-empty');
-const cartTotal = document.querySelector('.nosik-cart-total');
-
+//evento para añadir producto al carrito
 productsDetails.addEventListener('click', function (e) {
     if (e.target.classList.contains('add-to-cart')) {
         const PRODUCT = e.target.closest('.nosik-art-piece');
@@ -32,28 +32,35 @@ productsDetails.addEventListener('click', function (e) {
             price: PRODUCT.querySelector('#price').textContent,
         };
 
-        const exits = allProducts.some(
+        const PRODUCT_EXIST = allProducts.findIndex(
             product => product.name === PRODUCT_INFO.name
         );
 
-        if (exits) {
-            const products = allProducts.map(product => {
-                if (product.name === PRODUCT_INFO.name) {
-                    product.quantity++;
-                    return product;
-                } else {
-                    return product;
-                }
-            });
-            allProducts = [...products];
+        if (PRODUCT_EXIST !== -1) {
+            //el producto ya esta en el carrito y le incrementamos la cantidad
+            allProducts[PRODUCT_EXIST].quantity++;
         } else {
-            allProducts = [...allProducts, PRODUCT_INFO];
+            //el producto no esta en el carrito por lo que lo añadimos
+            allProducts.push(PRODUCT_INFO);
         }
         showCart();
     }
 });
 
-// funcion para mostrar  HTML
+//evento para eliminar producto del carrito
+rowProduct.addEventListener('click', function (e) {
+    if (e.target.classList.contains('delete-icon')) {
+        const containerProduct = e.target.closest('.cart-product');
+
+        // Encuentra el índice del producto en el array allProducts
+        const index = containerProduct.parentNode.children.indexOf(containerProduct);
+        //eliminamos el producto del array
+        allProducts.splice(index, 1);
+        showCart();
+    }
+});
+
+//funcion para mostrar el carrito
 const showCart = () => {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
