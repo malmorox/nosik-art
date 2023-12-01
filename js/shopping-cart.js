@@ -21,7 +21,7 @@ const productsDetails = document.querySelector('.nosik-main-container');
 //array con todos los productos del carrito
 let allProducts = [];
 
-// evento para añadir producto al carrito
+//evento para añadir producto al carrito
 productsDetails.addEventListener('click', function (e) {
     if (e.target.classList.contains('add-to-cart')) {
         const PRODUCT = e.target.closest('.nosik-art-piece');
@@ -47,7 +47,7 @@ productsDetails.addEventListener('click', function (e) {
     }
 });
 
-// evento para eliminar producto del carrito
+//evento para eliminar producto del carrito
 rowProduct.addEventListener('click', function (e) {
     if (e.target.classList.contains('delete-icon')) {
         const containerProduct = e.target.closest('.cart-product');
@@ -60,7 +60,7 @@ rowProduct.addEventListener('click', function (e) {
     }
 });
 
-// funcion para mostrar el carrito
+//funcion para mostrar el carrito
 const showCart = () => {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');

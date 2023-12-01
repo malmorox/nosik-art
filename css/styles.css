@@ -199,8 +199,9 @@ main {
 .nosik-main-container {
     margin: 20px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
 
 /* PÁGINA DE SOBRE MI */
 
@@ -397,7 +398,8 @@ main {
     font-family:;
 }
 
-.paiting-info .art-description {
+.paiting-info .art-description,
+.paiting-info .art-dimensions {
     display: none;
 }
 
@@ -458,6 +460,7 @@ main {
 
 .button {
     cursor: pointer;
+    justify-self: flex-end;
 }
 
 .buy-now {
@@ -508,6 +511,7 @@ main {
 /* FOOTER DE LA WEB */
 
 #nosik-footer {
+    bottom: 0;
     grid-area: footer;
     padding: 20px;
     display: flex;
