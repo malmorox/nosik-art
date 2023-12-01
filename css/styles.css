@@ -215,6 +215,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 /* PÁGINA DE SOBRE MI */
@@ -356,16 +357,17 @@ main {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 45px;
     row-gap: 45px;
-    width: 1000px;
+    width: 1200px;
 }
 
-/*@media (max-width: 2070px) {
+@media (max-width: 1260px) {
     .nosik-gallery-container {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 100%;
     }
-}*/
+}
 
 .nosik-gallery-artwork {
     width: 250px;
@@ -478,6 +480,7 @@ main {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     border: 1px solid #8d8d8d;
 }
 
