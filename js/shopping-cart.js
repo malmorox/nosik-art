@@ -8,9 +8,27 @@ const cartProductsHidden = document.querySelector('.nosik-cart-products');
 const totalToPay = document.querySelector('.cart-total-topay');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.nosik-cart-total');
-cartButton.addEventListener('click', () => {
+
+
+function toggleCartVisibility() {
     cartProductsHidden.classList.toggle('hidden-cart');
+}
+
+//evento para abrir y cerrar el carrito pulsando el boton
+
+cartButton.addEventListener('click', () => {
+    console.log("Clic en botón");
+    toggleCartVisibility();
 })
+
+
+//evento para cerrar el carrito pulsando en cualquier sitio de la pantalla
+document.addEventListener('click', function (e) {
+    if (!cartProductsHidden.contains(e.target) && !cartProductsHidden.classList.contains('hidden-cart')) {
+        cartProductsHidden.classList.add('hidden-cart');
+    }
+});
+
 
 const rowProduct = document.querySelector('.row-product');
 const cartInfo = document.querySelector('.cart-product');
