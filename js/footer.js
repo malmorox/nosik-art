@@ -49,6 +49,7 @@ function fillFooter() {
     INSTAGRAM_DIV.appendChild(INSTAGRAM_ICON);
     const INSTAGRAM_A = document.createElement("a");
     INSTAGRAM_A.setAttribute("class", "nosik-rrss-a");
+    INSTAGRAM_A.setAttribute("target", "blank");
     INSTAGRAM_A.href = "https://www.instagram.com/nosikart1/";
     INSTAGRAM_A.textContent = "nosikart1";
     INSTAGRAM_DIV.appendChild(INSTAGRAM_A);
@@ -61,6 +62,7 @@ function fillFooter() {
     TIKTOK_DIV.appendChild(TIKTOK_ICON);
     const TIKTOK_A = document.createElement("a");
     TIKTOK_A.setAttribute("class", "nosik-rrss-a");
+    TIKTOK_A.setAttribute("target", "blank");
     TIKTOK_A.href = "https://www.tiktok.com/@nosikart1?_t=8hka0BNSega&_r=1";
     TIKTOK_A.textContent = "nosikart1";
     TIKTOK_DIV.appendChild(TIKTOK_A);
