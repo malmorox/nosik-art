@@ -31,13 +31,23 @@
     src: url(../fonts/Manrope/Manrope-Regular.ttf) format('truetype');
 }
 
-/*html {
+@font-face {
+    font-family: 'Manrope-Medium';
+    src: url(../fonts/Manrope/Manrope-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope-SemiBold';
+    src: url(../fonts/Manrope/Manrope-SemiBold.ttf) format('truetype');
+}
+
+html {
     height: 100%;
     width: 100%;
-}*/
+}
 
 body {
-    min-height: 100vh;
+    min-height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -56,6 +66,7 @@ main {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 9999;
     gap: 20px;
     background: #909090;
 }
@@ -206,6 +217,7 @@ main {
 /* MAIN DE LA WEB */
 
 .nosik-main {
+    flex: 1;
     margin-top: 54px;
 }
 
@@ -376,9 +388,11 @@ main {
     cursor: pointer;
     background: white;
     justify-self: center;
+    transition: 0.3s transform;
 }
 
 .nosik-gallery-artwork:hover {
+    transform: scale(1.03);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -411,7 +425,8 @@ main {
 }
 
 .paiting-info .art-name {
-
+    font-size: 15px;
+    font-family: 'Manrope-SemiBold';
 }
 
 .paiting-info .art-year {
@@ -420,7 +435,7 @@ main {
 
 .paiting-info .art-year span {
     font-size: 13px;
-    font-family:;
+    font-family: 'Manrope-Medium';
 }
 
 .paiting-info .art-description,
@@ -434,7 +449,9 @@ main {
 }
 
 .paiting-info .art-price span {
+    color: #ff4b7b;
     font-size: 20px;
+    font-family: 'Manrope-Medium';
 }
 
 /* PÁGINA DE LA DETALLES */
@@ -448,8 +465,7 @@ main {
 
 .nosik-art-piece .image {
     padding: 3px;
-    width: 300px;
-    height: 400px;
+    height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
