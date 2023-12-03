@@ -5,9 +5,9 @@
     <title> Detalles | Nosik Art </title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="../js/footer.js" defer></script>
-    <script src="../js/piece-details.js" defer></script>
-    <script src="../js/shopping-cart.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+    <script src="/js/piece-details.js" defer></script>
+    <script src="/js/shopping-cart.js" defer></script>
 </head>
 <body>
     <header class="nosik-header">
@@ -45,10 +45,11 @@
                     <img src="" alt="cuadro" id="image">
                 </div>
                 <div class="art-piece-info">
-                    <h1 id="name"></h1> <span id="year"></span>
-                    <p id="description"> </p>
-                    <p id="dimensions"> </p>
-                    <p id="price"> </p>
+                    <span> </span> <h1 id="name"></h1>
+                    <span class="info-field" id="field-year"> Año: <span id="year"></span> </span>
+                    <span class="info-field" id="field-description"> Técnica: <span id="description"> </span> </span>
+                    <span class="info-field" id="field-dimensions"> Dimensiones: <span id="dimensions"> </span> </span>
+                    <span class="info-field" id="field-price"> Precio: <span id="price"> </span> </span>
                 </div>
                 <div class="art-piece-pay-zone">
                     <button class="button add-to-cart"> Añadir al carrito </button>

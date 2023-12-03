@@ -5,8 +5,9 @@
     <title> Sobre mí | Nosik Art </title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="../js/footer.js" defer></script>
-    <script src="../js/about-me.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+    <script src="/js/about-me.js" defer></script>
+    <script src="/js/shopping-cart.js"></script>
 </head>
 <body>
     <header class="nosik-header">
@@ -19,7 +20,22 @@
             <li><a href="gallery.html">Galeria</a></li>
         </ul>
         <div class="nosik-header-shopping-cart">
-            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+            <div class="nosik-shopping-cart">
+                <div class="nosik-cart-icon">
+                    <a href="#" class="cart-icon"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+                </div>
+                <div class="nosik-cart-counter hidden">
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+            <div class="nosik-cart-products hidden-cart">
+                <div class="row-product hidden"> </div>
+                <div class="nosik-cart-total hidden">
+                    <h3>Total:</h3>
+                    <span class="cart-total-topay"></span>
+                </div>
+                <p class="cart-empty">El carrito está vacío.</p>
+            </div>
         </div>
     </header>
     <main class="nosik-main">

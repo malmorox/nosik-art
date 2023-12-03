@@ -23,11 +23,11 @@ cartButton.addEventListener('click', () => {
 
 
 //evento para cerrar el carrito pulsando en cualquier sitio de la pantalla
-document.addEventListener('click', function (e) {
+/*document.addEventListener('click', function (e) {
     if (!cartProductsHidden.contains(e.target) && !cartProductsHidden.classList.contains('hidden-cart')) {
         cartProductsHidden.classList.add('hidden-cart');
     }
-});
+});*/
 
 
 const rowProduct = document.querySelector('.row-product');
@@ -53,13 +53,15 @@ productsDetails.addEventListener('click', function (e) {
         const PRODUCT_EXIST = allProducts.findIndex(
             product => product.name === PRODUCT_INFO.name
         );
-
-        if (PRODUCT_EXIST !== -1) {
-            //el producto ya esta en el carrito y le incrementamos la cantidad
-            allProducts[PRODUCT_EXIST].quantity++;
-        } else {
-            //el producto no esta en el carrito por lo que lo añadimos
+        console.log(allProducts);
+        if (PRODUCT_EXIST === -1) {
+            //el producto no esta en el carrito por lo que lo añadimos o ya está metido ese producto
             allProducts.push(PRODUCT_INFO);
+
+            //!allProducts.contains(PRODUCT_INFO.name)
+        } else {
+
+            console.log('hola');
         }
         showCart();
     }
@@ -71,7 +73,7 @@ rowProduct.addEventListener('click', function (e) {
         const containerProduct = e.target.closest('.cart-product');
 
         // Encuentra el índice del producto en el array allProducts
-        const index = containerProduct.parentNode.children.indexOf(containerProduct);
+        const index = Array.from(containerProduct.parentNode.children).indexOf(containerProduct);
         //eliminamos el producto del array
         allProducts.splice(index, 1);
         showCart();
@@ -104,7 +106,7 @@ const showCart = () => {
         containerProduct.innerHTML = `
             <div class="product-info">
                 <span class="cart-product-amount">${product.quantity}</span>
-                <p class="cart-product-name">${product.title}</p>
+                <p class="cart-product-name">${product.name}</p>
                 <span class="cart-product-price">${product.price}</span>
             </div>
             <a href="#" class="delete-icon"><i class="fas fa-times"></i></a>
@@ -120,3 +122,4 @@ const showCart = () => {
     totalToPay.innerText = `$${total}`;
     cartCount.innerText = totalOfProducts;
 };
+
