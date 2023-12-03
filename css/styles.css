@@ -222,7 +222,6 @@ main {
 }
 
 .nosik-main-container {
-    margin: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -284,6 +283,7 @@ main {
 }
 
 .nosik-contact {
+    padding: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -291,6 +291,7 @@ main {
 }
 
 .nosik-contact-text {
+    padding-left: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -343,6 +344,7 @@ main {
     max-height: 100px;
     font-size: 12px;
     border-radius: 4px;
+    font-family: 'Manrope-Regular';
 }
 
 .nosik-contact-form-submit {
@@ -354,6 +356,7 @@ main {
     background: #1f53c5;
     font-size: 15px;
     cursor: pointer;
+        font-family: 'Manrope-Medium';
 }
 
 .nosik-contact-form-submit:hover {
@@ -478,18 +481,33 @@ main {
 }
 
 .art-piece-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    border: 1px solid red;
 }
 
-.art-piece-info .name {
+.art-piece-info #name {
+    font-size: 74px;
+    font-family: 'Manrope-SemiBold';
+}
+
+.art-piece-info #year {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.art-piece-info #description {
     font-size: 24px;
 }
 
-.art-piece-info .description {
+.art-piece-info #dimensions {
     font-size: 16px;
     margin-top: 10px;
+}
+
+.art-piece-info #price {
+    justify-self: flex-end;
 }
 
 .art-piece-pay-zone {
