@@ -81,16 +81,16 @@ rowProduct.addEventListener('click', function (e) {
 });
 
 //funcion para mostrar el carrito
-const showCart = () => {
+function showCart() {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
         rowProduct.classList.add('hidden');
-        cartTotal.classList.add('hidden');
+        cartTotal.classList.add('hidden-cart');
         cartCounter.classList.add('hidden');
     } else {
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
-        cartTotal.classList.remove('hidden');
+        cartTotal.classList.remove('hidden-cart');
         cartCounter.classList.remove('hidden');
     }
 
@@ -121,5 +121,4 @@ const showCart = () => {
 
     totalToPay.innerText = `$${total}`;
     cartCount.innerText = totalOfProducts;
-};
-
+}
