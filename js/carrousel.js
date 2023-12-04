@@ -9,22 +9,29 @@ const ARROW_ARRAY = [LEFT_ARROW, RIGHT_ARROW];
 //Inserta la flecha izquierda o derecha en el carrousel en función de la iteración de la i
 function insertArrowIntoCarrousel(i) {
     const FIRST_POSITION = 0;
+    var arrowRoute;
+    var arrowName;
+    var id;
+    var n;
     if(i === FIRST_POSITION) {
-        LEFT_ARROW.setAttribute("src", "img/left_arrow.svg");
-        LEFT_ARROW.setAttribute("alt", "left-arrow");
-        LEFT_ARROW.classList.add("arrow");
-        LEFT_ARROW.id = "left";
-        CARROUSEL.appendChild(LEFT_ARROW);
+        arrowRoute = "img/left_arrow.svg";
+        arrowName = "left-arrow";
+        id = "left";
+        n = 0;
     } else {
-        RIGHT_ARROW.setAttribute("src", "img/right_arrow.svg");
-        RIGHT_ARROW.setAttribute("alt", "right_arrow");
-        RIGHT_ARROW.classList.add("arrow");
-        RIGHT_ARROW.id = "right";
-        CARROUSEL.appendChild(RIGHT_ARROW);
+        arrowRoute = "img/right_arrow.svg";
+        arrowName = "right-arrow";
+        id = "right";
+        n = 1;
     }
+    ARROW_ARRAY[n].setAttribute("src", arrowRoute);
+    ARROW_ARRAY[n].setAttribute("alt", arrowName);
+    ARROW_ARRAY[n].classList.add("arrow");
+    ARROW_ARRAY[n].id = id;
+    CARROUSEL.appendChild(ARROW_ARRAY[n]);
 }
 //Número de elementos dentro del carrousel
-const NUMBER_OF_ELEMENTS = 2;
+const NUMBER_OF_ELEMENTS = 3;
 //Número de imágenes en el carrousel
 const NUMBER_OF_IMAGES = 3;
 //Constructor del objeto imagen
@@ -58,56 +65,18 @@ const IMAGE_1 = document.createElement("img");
 const IMAGE_2 = document.createElement("img");
 //Contiene el elemento de la tercera imagen del carrousel
 const IMAGE_3 = document.createElement("img");
+//Array que contiene los elementos del DOM de las 3 imágenes del carrousel
+const CARROUSEL_IMAGES_ARRAY = [IMAGE_1, IMAGE_2, IMAGE_3];
 //Array que contiene las posiciones inicializadas de las tres imágenes del carrousel
 let arrayCount = [0, 1, 2];
-
+//Objeto de la imagen del carrousel de la obra 1 en función del valor de la posición 0 de arrayCount
 let image1ArtworkObject;
+//Objeto de la imagen del carrousel de la obra 2 en función del valor de la posición 1 de arrayCount
 let image2ArtworkObject;
+//Objeto de la imagen del carrousel de la obra 3 en función del valor de la posición 2 de arrayCount
 let image3ArtworkObject;
-//Rellenamos inicialmente el carrousel con las imágenes por defecto
-for (let i = 0; i < NUMBER_OF_ELEMENTS; i++) {
-    switch(i) {
-        case 0:
-            insertArrowIntoCarrousel(i);
-            break;
-        case 1:
-            const IMG_CONTAINER = document.createElement("div");
-            IMG_CONTAINER.classList.add("nosik-img-container");
-            CARROUSEL.appendChild(IMG_CONTAINER);
-            for (let n = 0; n < NUMBER_OF_IMAGES; n++) {
-                switch(n) {
-                    case 0:
-                        image1ArtworkObject = IMG_ARRAY[arrayCount[0]];
-                        IMAGE_1.src = image1ArtworkObject.route;
-                        IMAGE_1.setAttribute("alt", "paiting");
-                        IMAGE_1.classList.add("nosik-carousel-secondary-pic");
-                        IMAGE_1.id = "pic-1";
-                        IMG_CONTAINER.appendChild(IMAGE_1);
-                        break;
-                    case 1:
-                        image2ArtworkObject = IMG_ARRAY[arrayCount[1]];
-                        IMAGE_2.src = image2ArtworkObject.route;
-                        IMAGE_2.setAttribute("alt", "paiting");
-                        IMAGE_2.id = "pic-2";
-                        IMG_CONTAINER.appendChild(IMAGE_2);
-                        break;
-                    case 2:
-                        image3ArtworkObject = IMG_ARRAY[arrayCount[2]];
-                        IMAGE_3.src = image3ArtworkObject.route;
-                        IMAGE_3.setAttribute("alt", "paiting");
-                        IMAGE_3.classList.add("nosik-carousel-secondary-pic");
-                        IMAGE_3.id = "pic-3";
-                        IMG_CONTAINER.appendChild(IMAGE_3);
-                    default:
-                        break;
-                }
-            }
-        case 2:
-            insertArrowIntoCarrousel(i);
-        default:
-            break;
-    }
-}
+//Array que guarda los objetos de las imágenes del carrousel
+let ARTWORK_OBJECTS_ARRAY = [image1ArtworkObject, image2ArtworkObject, image3ArtworkObject];
 //Inicializa las imágenes al del valor del correspondiente índice de cada imagen
 function inicializateImages() {
     image1ArtworkObject = IMG_ARRAY[arrayCount[0]];
@@ -117,6 +86,30 @@ function inicializateImages() {
     image3ArtworkObject = IMG_ARRAY[arrayCount[2]];
     IMAGE_3.src = image3ArtworkObject.route;
 }
+//Declaramos el contenedor que contendrá las imágenes del carrousel
+const IMG_CONTAINER = document.createElement("div");
+//Rellenamos inicialmente el carrousel con las imágenes por defecto
+for (let i = 0; i < NUMBER_OF_ELEMENTS; i++) {
+    if(i !== 1) {
+        insertArrowIntoCarrousel(i);
+    } else {
+        IMG_CONTAINER.classList.add("nosik-img-container");
+        CARROUSEL.appendChild(IMG_CONTAINER);
+        for (let n = 0; n < 3; n++) {
+            if(n === 0 || n === 2) {
+                CARROUSEL_IMAGES_ARRAY[n].classList.add("nosik-carousel-secondary-pic");
+            }
+            ARTWORK_OBJECTS_ARRAY[n] = IMG_ARRAY[arrayCount[n]];
+            CARROUSEL_IMAGES_ARRAY[n].src = IMG_ARRAY[arrayCount[n]].route;
+            CARROUSEL_IMAGES_ARRAY[n].setAttribute("alt", "paiting");
+            CARROUSEL_IMAGES_ARRAY[n].id = `pic-${n + 1}`;
+            IMG_CONTAINER.appendChild(CARROUSEL_IMAGES_ARRAY[n]);
+        }
+    }
+    
+}
+//Después 
+inicializateImages();
 //Evento de rotación para la flecha izquierda del carrousel
 LEFT_ARROW.addEventListener("click", function() {
     for (let i = 0; i < 3; i++) {
@@ -131,24 +124,18 @@ RIGHT_ARROW.addEventListener("click", function() {
     }
     inicializateImages();
 });
-
-
-
 // Redirección de la imagen 1 del carrousel a la página art-piece.html
-IMAGE_1.addEventListener("click", function() {
+CARROUSEL_IMAGES_ARRAY[0].addEventListener("click", function() {
     let url = `pages/art-piece.html?name=${encodeURIComponent(image1ArtworkObject.title)}&year=${encodeURIComponent(image1ArtworkObject.year)}&description=${encodeURIComponent(image1ArtworkObject.medium)}&dimensions=${encodeURIComponent(image1ArtworkObject.measures)}&price=${encodeURIComponent(image1ArtworkObject.price)}&image=${encodeURIComponent(`/${image1ArtworkObject.route}`)}`;
     window.location.href = url;
 });
-
-
 // Redirección de la imagen 2 del carrousel a la página art-piece.html
-IMAGE_2.addEventListener("click", function() {
+CARROUSEL_IMAGES_ARRAY[1].addEventListener("click", function() {
     let url = `pages/art-piece.html?name=${encodeURIComponent(image2ArtworkObject.title)}&year=${encodeURIComponent(image2ArtworkObject.year)}&description=${encodeURIComponent(image2ArtworkObject.medium)}&dimensions=${encodeURIComponent(image2ArtworkObject.measures)}&price=${encodeURIComponent(image2ArtworkObject.price)}&image=${encodeURIComponent(`/${image2ArtworkObject.route}`)}`;
     window.location.href = url;
 });
-
 // Redirección de la imagen 3 del carrousel a la página art-piece.html
-IMAGE_3.addEventListener("click", function() {
+CARROUSEL_IMAGES_ARRAY[2].addEventListener("click", function() {
     let url = `pages/art-piece.html?name=${encodeURIComponent(image3ArtworkObject.title)}&year=${encodeURIComponent(image3ArtworkObject.year)}&description=${encodeURIComponent(image3ArtworkObject.medium)}&dimensions=${encodeURIComponent(image3ArtworkObject.measures)}&price=${encodeURIComponent(image3ArtworkObject.price)}&image=${encodeURIComponent(`/${image3ArtworkObject.route}`)}`;
     window.location.href = url;
 });
