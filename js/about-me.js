@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const HELP_OPTIONS = [
         'Quiero saber más detalles de una obra en concreto',
         'Me gustaría hablar personalmente con el artista',
-        'Necesito contactar para cualquier otra cosa'
+        'Tengo una marca y quiero colaborar contigo'
     ];
 
     HELP_OPTIONS.forEach((textOption) => {

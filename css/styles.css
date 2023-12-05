@@ -220,6 +220,7 @@ main {
 .cart-empty{
     padding: 20px;
     text-align: center;
+    font-family: Montserrat-Medium;
 }
 
 /* MAIN DE LA WEB */
@@ -595,6 +596,7 @@ main {
 
 #nosik-index-title {
     margin: 0;
+    font-family: 'Manrope-SemiBold';
 }
 
 /* carousel */

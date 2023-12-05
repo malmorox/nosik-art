@@ -56,7 +56,7 @@ let artwork5 = new Artwork("Yendo a la guerra", "29.7 x 42 cm", "Lápices/Acuare
 //Creo el objeto 6 de una obra
 let artwork6 = new Artwork("Primavera e Indio", "60 x 60 cm", "Acrílico sobre madera blanca", "$400", "2022", "img/art/cuadro6.jpg");
 //Creo el objeto 7 de una obra
-let artwork7 = new Artwork("Divorcio en el techo", "35 x 50cm", "Tinta acrílica sobre cartulina", "$400", "2022", "img/art/cuadro7.jpg");
+let artwork7 = new Artwork("Divorcio en el techo", "35 x 50cm", "Tinta acrílica sobre cartulina", "$670", "2022", "img/art/cuadro7.jpg");
 //Array con strings que guardan cada objeto de obra
 const IMG_ARRAY = [artwork1, artwork2, artwork3, artwork4, artwork5, artwork6, artwork7];
 //Contiene el elemento de la primera imagen del carrousel

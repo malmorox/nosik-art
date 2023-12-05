@@ -69,7 +69,7 @@ productsDetails.addEventListener('click', function (e) {
 
 //evento para eliminar producto del carrito
 rowProduct.addEventListener('click', function (e) {
-    if (e.target.classList.contains('delete-icon')) {
+    if (e.target.classList.contains('fa-times')) {
         const containerProduct = e.target.closest('.cart-product');
 
         // Encuentra el índice del producto en el array allProducts

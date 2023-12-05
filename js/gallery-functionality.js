@@ -27,7 +27,7 @@ const ARTWORKS = [
     },
     {
         image: "/img/art/cuadro7.jpg", name: "Divorcio en el techo", description: "Tinta acrílica sobre cartulina",
-        dimensions: "35 x 50 cm", price: "$400", year: "2022"
+        dimensions: "35 x 50 cm", price: "$670", year: "2022"
     },
 ];
 
