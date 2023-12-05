@@ -134,6 +134,7 @@ main {
 
 #cart-count {
     font-size: 12px;
+    font-family: 'Montserrat-Medium';
 }
 
 .hidden {
@@ -169,6 +170,7 @@ main {
     justify-content: space-between;
     align-items: center;
     flex: 0.8;
+    font-family: Montserrat-Medium;
 }
 
 .cart-product-amount {
@@ -181,7 +183,7 @@ main {
 }
 
 .cart-product-price {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 20px;
     margin-left: 10px;
 }
@@ -202,6 +204,7 @@ main {
     align-items: center;
     padding: 10px 0;
     gap: 20px;
+    font-family: Montserrat-Medium;
 }
 
 .nosik-cart-total h3{

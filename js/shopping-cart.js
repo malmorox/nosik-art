@@ -19,7 +19,7 @@ function toggleCartVisibility() {
 cartButton.addEventListener('click', () => {
     console.log("Clic en botón");
     toggleCartVisibility();
-})
+});
 
 
 //evento para cerrar el carrito pulsando en cualquier sitio de la pantalla
@@ -85,12 +85,12 @@ function showCart() {
     if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
         rowProduct.classList.add('hidden');
-        cartTotal.classList.add('hidden-cart');
+        cartTotal.classList.add('hidden');
         cartCounter.classList.add('hidden');
     } else {
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
-        cartTotal.classList.remove('hidden-cart');
+        cartTotal.classList.remove('hidden');
         cartCounter.classList.remove('hidden');
     }
 
