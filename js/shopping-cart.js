@@ -15,19 +15,14 @@ function toggleCartVisibility() {
 }
 
 //evento para abrir y cerrar el carrito pulsando el boton
-
-cartButton.addEventListener('click', () => {
-    console.log("Clic en botón");
-    toggleCartVisibility();
-});
-
+cartButton.addEventListener('click', toggleCartVisibility);
 
 //evento para cerrar el carrito pulsando en cualquier sitio de la pantalla
-/*document.addEventListener('click', function (e) {
-    if (!cartProductsHidden.contains(e.target) && !cartProductsHidden.classList.contains('hidden-cart')) {
-        cartProductsHidden.classList.add('hidden-cart');
-    }
-});*/
+//document.addEventListener('click', function (e) {
+//    if (!cartProductsHidden.contains(e.target) && !cartProductsHidden.classList.contains('hidden-cart')) {
+//        cartProductsHidden.classList.add('hidden-cart');
+//    }
+//});
 
 
 const rowProduct = document.querySelector('.row-product');
@@ -57,11 +52,8 @@ productsDetails.addEventListener('click', function (e) {
         if (PRODUCT_EXIST === -1) {
             //el producto no esta en el carrito por lo que lo añadimos o ya está metido ese producto
             allProducts.push(PRODUCT_INFO);
-
-            //!allProducts.contains(PRODUCT_INFO.name)
         } else {
-
-            console.log('hola');
+            console.log('no se ha añadido porq ya esta');
         }
         showCart();
     }

@@ -31,8 +31,6 @@ const ARTWORKS = [
     },
 ];
 
-console.log(ARTWORKS[0]['image'])
-
 const GALLERY_CONTAINER = document.querySelector('.nosik-gallery-container');
 
 function showArtWorks() {
